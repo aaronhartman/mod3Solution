@@ -12,10 +12,14 @@ function NarrowItDownController(MenuSearchService) {
   var narrowItDown = this;
   narrowItDown.searchTerm = "";
   narrowItDown.search = function(searchTerm) {
+    if (searchTerm == "") {
+      narrowItDown.found = [];
+    } else {
     var promise = MenuSearchService.getMatchedMenuItems(narrowItDown.searchTerm);
     promise.then(function(response) {
     narrowItDown.found = response;
     });
+    }
   };
 
   narrowItDown.removeItem = function(index) {

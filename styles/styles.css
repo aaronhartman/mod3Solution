@@ -6,7 +6,7 @@ input[type="text"] {
   float: left;
 }
 .results {
-  clear: both;
+  clear: left;
 }
 
 .narrow-button {
