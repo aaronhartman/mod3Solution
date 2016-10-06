@@ -1,0 +1,12 @@
+
+<div class="results">
+<h3 ng-if="list.found && !list.isEmpty()">Found Items</h3>
+<h4 class="resultsHeader" ng-if="list.found && !list.isEmpty()"># / Name / Short Name / Description</h4>
+<ol>
+    <li ng-repeat="item in list.found">
+    {{ item.name }} / {{ item.short_name }} / {{ item.description }}
+    <button ng-click="onRemove({index: $index});">Remove Item</button>
+    </li>
+</ol>
+<h3 ng-if="list.found && list.isEmpty()">Nothing Found!</h3>
+</div>
